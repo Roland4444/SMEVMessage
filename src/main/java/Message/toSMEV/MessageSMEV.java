@@ -12,7 +12,7 @@ public class MessageSMEV implements Serializable {
 
     };
 
-    
+
     public MessageSMEV(String Id, String operator, byte[] DataToWork){
         this.ID=Id;
         this.DataToWork=DataToWork;
