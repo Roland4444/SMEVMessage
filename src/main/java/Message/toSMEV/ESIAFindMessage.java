@@ -1,12 +1,18 @@
-package Message;
+package Message.toSMEV;
 
 import java.io.*;
 
-public class MessageSMEV implements Serializable {
-    public String pseudo;
-    public String Id;
-    public byte[] byteToWork;
-    public static byte[] saveMessageSMEV(MessageSMEV event){
+public class ESIAFindMessage implements Serializable {
+    public String Name;
+    public String Surname;
+    public String MiddleName;
+    public String OperatorSnils;
+    public String Ra;
+    public String Passseria;
+    public String Passnumber;
+    public String ID;
+
+    public static byte[] saveESIAFindMessage(ESIAFindMessage event){
         byte[] Result=null ;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutput out = null;
@@ -27,7 +33,7 @@ public class MessageSMEV implements Serializable {
         return Result;
     }
 
-    public static MessageSMEV restoreMessageSMEV(byte[] input){
+    public static ESIAFindMessage restoreESIAFindMessage(byte[] input){
         Object o=null;
         ByteArrayInputStream bis = new ByteArrayInputStream(input);
         ObjectInput in = null;
@@ -46,6 +52,6 @@ public class MessageSMEV implements Serializable {
             } catch (IOException ex) {
             }
         }
-        return (MessageSMEV) o;
+        return (ESIAFindMessage) o;
     }
 }

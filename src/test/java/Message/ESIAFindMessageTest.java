@@ -1,10 +1,14 @@
 package Message;
 
+
+import Message.toSMEV.ESIAFindMessage;
 import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
 public class ESIAFindMessageTest extends TestCase {
 
-    public void testSaveESIAFindMessage() {
+    @Test
+    void testSaveESIAFindMessage() {
         String name = "Ivan";
         String surname="Ivanov";
         String middle= "Ivanovich";

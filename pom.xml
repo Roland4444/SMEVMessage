@@ -5,9 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ch.roland</groupId>
-    <artifactId>EBSMessage</artifactId>
-    <version>1.2-SNAPSHOT</version>
-
+    <artifactId>Messaging</artifactId>
+    <version>1.6-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.3.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
 
@@ -81,4 +88,5 @@
 
         </plugins>
     </build>
+
 </project>

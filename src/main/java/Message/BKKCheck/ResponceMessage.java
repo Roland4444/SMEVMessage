@@ -1,23 +1,26 @@
-package Message;
+package Message.BKKCheck;
 
 import java.io.*;
 
-public class ESIAFindMessage implements Serializable {
-    public String Name;
-    public String Surname;
-    public String MiddleName;
-    public String OperatorSnils;
-    public String Ra;
-    public String Passseria;
-    public String Passnumber;
+public class ResponceMessage implements Serializable {
+    public ResponceMessage(int checkResult, int lastErrorInSession, int ResultLoadingSoSymbols, String ID){
+        this.checkResult=checkResult;
+        this.lastErrorInSession=lastErrorInSession;
+        this.ResultLoadingSoSymbols=ResultLoadingSoSymbols;
+        this.ID=ID;
+    }
+    public int checkResult;
+    public int lastErrorInSession;
+    public int ResultLoadingSoSymbols;
+    public String ID;
 
-    public static byte[] saveESIAFindMessage(ESIAFindMessage event){
+    public static  byte[] saveMessageToBytes(ResponceMessage inp){
         byte[] Result=null ;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutput out = null;
         try {
             out = new ObjectOutputStream(bos);
-            out.writeObject(event);
+            out.writeObject(inp);
             out.flush();
             Result = bos.toByteArray();
         } catch (IOException e) {
@@ -26,13 +29,13 @@ public class ESIAFindMessage implements Serializable {
             try {
                 bos.close();
             } catch (IOException ex) {
-                // ignore close exception
+
             }
         }
         return Result;
     }
 
-    public static ESIAFindMessage restoreESIAFindMessage(byte[] input){
+    public static ResponceMessage restoreBytesToResponceMessage(byte[] input){
         Object o=null;
         ByteArrayInputStream bis = new ByteArrayInputStream(input);
         ObjectInput in = null;
@@ -49,8 +52,9 @@ public class ESIAFindMessage implements Serializable {
                     in.close();
                 }
             } catch (IOException ex) {
+
             }
         }
-        return (ESIAFindMessage) o;
+        return (ResponceMessage) o;
     }
 }
