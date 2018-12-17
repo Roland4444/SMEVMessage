@@ -27,7 +27,7 @@ public class ESIAFindMessage implements Serializable {
             try {
                 bos.close();
             } catch (IOException ex) {
-                // ignore close exception
+
             }
         }
         return Result;
