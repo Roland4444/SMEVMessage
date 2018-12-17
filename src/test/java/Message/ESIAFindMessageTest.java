@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class ESIAFindMessageTest extends TestCase {
 
     @Test
-    void testSaveESIAFindMessage() {
+    public void testSaveESIAFindMessage() {
         String name = "Ivan";
         String surname="Ivanov";
         String middle= "Ivanovich";

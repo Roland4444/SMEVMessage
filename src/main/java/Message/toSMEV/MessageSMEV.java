@@ -3,10 +3,13 @@ package Message.toSMEV;
 import java.io.*;
 
 public class MessageSMEV implements Serializable {
-    public MessageSMEV(String ID, String operator, String Action, byte[] DataToWork, String addressToReply){
+    public MessageSMEV(){
+
+    }
+
+    public MessageSMEV(String ID, String operator, byte[] DataToWork, String addressToReply){
         this.ID=ID;
         this.pseudo=operator;
-        this.ActionInService=Action;
         this.DataToWork=DataToWork;
         this.addressToReply=addressToReply;
 
@@ -21,7 +24,6 @@ public class MessageSMEV implements Serializable {
 
     public String pseudo;
     public byte[] DataToWork;
-    public String ActionInService;
     public String addressToReply;
     public String ID;
 

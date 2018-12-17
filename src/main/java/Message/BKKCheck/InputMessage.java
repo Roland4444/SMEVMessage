@@ -10,7 +10,7 @@ public class InputMessage implements Serializable {
         this.DescriptionService=DescriptionService;
         this.ID=ID;
     }
-    public String FileName ;
+    public String FileName;
     public byte[] fileContent;
     public String DescriptionService;
     public String Address;
