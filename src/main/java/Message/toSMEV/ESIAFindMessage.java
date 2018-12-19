@@ -1,8 +1,10 @@
 package Message.toSMEV;
 
+import Message.abstractions.BinaryMessage;
+
 import java.io.*;
 
-public class ESIAFindMessage implements Serializable {
+public class ESIAFindMessage implements BinaryMessage {
     public String Name;
     public String Surname;
     public String MiddleName;
