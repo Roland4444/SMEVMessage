@@ -1,8 +1,10 @@
 package Message.BKKCheck;
 
+import Message.abstractions.BinaryMessage;
+
 import java.io.*;
 
-public class InputMessage implements Serializable {
+public class InputMessage implements BinaryMessage {
     public InputMessage(String FileName, byte[] fileContent, String DescriptionService, String Address, String ID) {
         this.Address=Address;
         this.FileName=FileName;
@@ -15,50 +17,6 @@ public class InputMessage implements Serializable {
     public String DescriptionService;
     public String Address;
     public String ID;
-
-    public static  byte[] saveMessageToBytes(InputMessage inp){
-            byte[] Result=null ;
-            ByteArrayOutputStream bos = new ByteArrayOutputStream();
-            ObjectOutput out = null;
-            try {
-                out = new ObjectOutputStream(bos);
-                out.writeObject(inp);
-                out.flush();
-                Result = bos.toByteArray();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    bos.close();
-                } catch (IOException ex) {
-
-                }
-            }
-            return Result;
-    }
-
-    public static InputMessage restoreBytesToInputMessage(byte[] input){
-            Object o=null;
-            ByteArrayInputStream bis = new ByteArrayInputStream(input);
-            ObjectInput in = null;
-            try {
-                in = new ObjectInputStream(bis);
-                o = in.readObject();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    if (in != null) {
-                        in.close();
-                    }
-                } catch (IOException ex) {
-
-                }
-            }
-            return (InputMessage) o;
-    }
 
 }
 

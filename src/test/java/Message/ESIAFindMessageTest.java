@@ -1,6 +1,7 @@
 package Message;
 
 
+import Message.abstractions.BinaryMessage;
 import Message.toSMEV.ESIAFindMessage;
 import junit.framework.TestCase;
 import org.junit.jupiter.api.Test;
@@ -20,13 +21,10 @@ public class ESIAFindMessageTest extends TestCase {
         efm.Surname=surname;
         efm.OperatorSnils=snils;
 
-        ESIAFindMessage restored = ESIAFindMessage.restoreESIAFindMessage(ESIAFindMessage.saveESIAFindMessage(efm));
+        ESIAFindMessage restored = (ESIAFindMessage) BinaryMessage.restored(BinaryMessage.savedToBLOB(efm));
         assertEquals(name, restored.Name);
         assertEquals(surname, restored.Surname);
         assertEquals(middle, restored.MiddleName);
         assertEquals(snils, restored.OperatorSnils);
-
-
-
     }
 }
