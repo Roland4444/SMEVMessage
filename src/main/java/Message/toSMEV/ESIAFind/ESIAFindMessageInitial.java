@@ -1,22 +1,24 @@
-package Message.toSMEV;
+package Message.toSMEV.ESIAFind;
 
 import Message.abstractions.BinaryMessage;
 
-import java.io.*;
+public class ESIAFindMessageInitial implements BinaryMessage {
 
-public class ESIAFindMessage implements BinaryMessage {
+    public ESIAFindMessageInitial(){
 
-    public ESIAFindMessage(String ID, String RA, String SNILSOper, String Surname, String FirstName, String MiddleName,
-                           String PassSeria, String PassNumber,  String Mobile, String SNiLS){
+    };
+
+    public ESIAFindMessageInitial(String ID, String RA, String SNILSOper, String Surname, String FirstName, String MiddleName,
+                                  String PassSeria, String PassNumber, String Mobile, String SNiLS){
         this.ID=ID;
         this.Ra=RA;
-        this.OperatorSnils=ESIAFindMessage.getSNILSfromplain(SNILSOper);
+        this.OperatorSnils= ESIAFindMessageInitial.getSNILSfromplain(SNILSOper);
         this.Surname=Surname;
         this.Name=FirstName;
         this.MiddleName=MiddleName;
         this.Passnumber=PassNumber;
         this.Passseria=PassSeria;
-        this.MobileNumber=ESIAFindMessage.getMobilefromplain(Mobile);
+        this.MobileNumber= ESIAFindMessageInitial.getMobilefromplain(Mobile);
         this.SNILS=SNiLS;
 
     }

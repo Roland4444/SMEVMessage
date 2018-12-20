@@ -2,7 +2,7 @@ package Message;
 
 
 import Message.abstractions.BinaryMessage;
-import Message.toSMEV.ESIAFindMessage;
+import Message.toSMEV.ESIAFind.ESIAFindMessageInitial;
 import junit.framework.TestCase;
 import org.junit.jupiter.api.Test;
 
@@ -15,13 +15,13 @@ public class ESIAFindMessageTest extends TestCase {
         String middle= "Ivanovich";
         String snils = "000";
 
-        ESIAFindMessage efm = new ESIAFindMessage();
+        ESIAFindMessageInitial efm = new ESIAFindMessageInitial();
         efm.MiddleName=middle;
         efm.Name=name;
         efm.Surname=surname;
         efm.OperatorSnils=snils;
 
-        ESIAFindMessage restored = (ESIAFindMessage) BinaryMessage.restored(BinaryMessage.savedToBLOB(efm));
+        ESIAFindMessageInitial restored = (ESIAFindMessageInitial) BinaryMessage.restored(BinaryMessage.savedToBLOB(efm));
         assertEquals(name, restored.Name);
         assertEquals(surname, restored.Surname);
         assertEquals(middle, restored.MiddleName);
