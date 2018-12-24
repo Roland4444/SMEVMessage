@@ -1,6 +1,8 @@
 package Message.internal.FIAS;
 
-public class FIASResult {
+import Message.abstractions.BinaryMessage;
+
+public class FIASResult implements BinaryMessage {
     public String ID;
     public String Result;
 }
