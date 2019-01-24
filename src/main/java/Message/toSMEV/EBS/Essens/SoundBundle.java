@@ -1,12 +1,11 @@
 package Message.toSMEV.EBS.Essens;
 
 import Message.abstractions.BinaryMessage;
+import Message.abstractions.FileInBinary;
 
 import java.io.*;
 
-public class SoundBundle implements BinaryMessage {
-    public String filename;
-    public byte[] bigWavContent;
+public class SoundBundle extends FileInBinary {
     public float begin09;
     public float end09;
     public float begin90;
