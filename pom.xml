@@ -6,7 +6,7 @@
 
     <groupId>uk.roland</groupId>
     <artifactId>Messaging</artifactId>
-    <version>2.5-SNAPSHOT</version>
+    <version>3.3-SNAPSHOT</version>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>

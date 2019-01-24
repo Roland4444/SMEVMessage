@@ -6,4 +6,5 @@ public class ESIAFindMessageResult implements BinaryMessage {
     public String ID;
     public String oid;
     public String trusted;
+    public String BioStu;
 }

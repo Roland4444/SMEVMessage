@@ -7,8 +7,10 @@ import java.util.Date;
 
 public class ESIACreateInit implements BinaryMessage {
     public String ID;
+
     public String SNILSOper;
     public String RA;
+
     public String SNILS;
     public String Name;
     public String Surname;
