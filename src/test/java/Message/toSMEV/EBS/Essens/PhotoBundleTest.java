@@ -1,6 +1,7 @@
 package Message.toSMEV.EBS.Essens;
 
 import Message.abstractions.BinaryMessage;
+import Message.abstractions.FileInBinary;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -15,8 +16,8 @@ class PhotoBundleTest {
     void suspendToDisk() throws IOException, InterruptedException {
         PhotoBundle pb = (PhotoBundle) BinaryMessage.restored(Files.readAllBytes(new File("photoblob.bin").toPath()));
         assertNotEquals(null, pb);
-        PhotoBundle.clean(pb);
-        PhotoBundle.suspendToDisk(pb);
+        FileInBinary.clean(pb);
+        FileInBinary.suspendToDisk(pb);
         Thread.sleep(500);
         assertEquals(true, new File(pb.filename).exists());
 
