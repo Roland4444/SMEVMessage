@@ -21,8 +21,6 @@ class EBSMessageTest {
         EBSMessage restored = (EBSMessage) BinaryMessage.restored(BinaryMessage.savedToBLOB(ebsm));
         assertEquals(restored.otherinfo.Mnemonic,          oi.Mnemonic);
         assertEquals(restored.otherinfo.OperSNILS, oi.OperSNILS);
-
-
     }
 
 }
