@@ -5,12 +5,11 @@ import Message.toSMEV.EBS.Essens.OtherInfo;
 import Message.toSMEV.EBS.Essens.PhotoBundle;
 import Message.toSMEV.EBS.Essens.SoundBundle;
 
-import java.util.ArrayList;
 
 public class EBSMessage implements BinaryMessage {
-    OtherInfo otherinfo;
-    PhotoBundle PhotoBLOB;
-    SoundBundle SoundBLOB;
+    public OtherInfo otherinfo;
+    public PhotoBundle PhotoBLOB;
+    public SoundBundle SoundBLOB;
     public EBSMessage(){
 
     };

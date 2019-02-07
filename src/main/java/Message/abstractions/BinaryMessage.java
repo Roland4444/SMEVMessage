@@ -3,6 +3,13 @@ import java.io.*;
 
 public interface BinaryMessage extends Serializable {
 
+    public static void write(byte[] data, String filename) throws IOException {
+        FileOutputStream fos = new FileOutputStream(filename);
+        fos.write(data);
+        fos.close();
+
+    }
+
     public static BinaryMessage restored(byte[] input){
         Object o=null;
         ByteArrayInputStream bis = new ByteArrayInputStream(input);
