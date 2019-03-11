@@ -1,5 +1,6 @@
 package Message.abstractions;
 import java.io.*;
+import java.nio.file.Files;
 
 public interface BinaryMessage extends Serializable {
 
@@ -7,8 +8,11 @@ public interface BinaryMessage extends Serializable {
         FileOutputStream fos = new FileOutputStream(filename);
         fos.write(data);
         fos.close();
-
     }
+
+    public static byte[] readBytes(String filename) throws IOException {
+        return Files.readAllBytes(new File(filename).toPath());
+    };
 
     public static BinaryMessage restored(byte[] input){
         Object o=null;
