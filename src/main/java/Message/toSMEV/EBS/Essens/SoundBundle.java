@@ -6,12 +6,12 @@ import Message.abstractions.FileInBinary;
 import java.io.*;
 
 public class SoundBundle extends FileInBinary {
-    public float begin09;
-    public float end09;
-    public float begin90;
-    public float end90;
-    public float begin090;
-    public float end090;
+    public double begin09;
+    public double end09;
+    public double begin90;
+    public double end90;
+    public double begin090;
+    public double end090;
 
     public static byte[] saveToByte(SoundBundle input){
         byte[] Result=null ;
