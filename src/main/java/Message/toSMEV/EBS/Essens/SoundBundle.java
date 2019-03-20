@@ -13,6 +13,23 @@ public class SoundBundle extends FileInBinary {
     public double begin090;
     public double end090;
 
+    public void printSelf(){
+
+        System.out.println("FILENAME>>  "+filename);
+        System.out.println("SIZE=  "+fileContent.length);
+
+        System.out.println("TAGS>>");
+
+        System.out.println(begin09);
+        System.out.println(end09);
+
+        System.out.println(begin90);
+        System.out.println(end90);
+
+        System.out.println(begin090);
+        System.out.println(end090);
+    }
+
     public static byte[] saveToByte(SoundBundle input){
         byte[] Result=null ;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();

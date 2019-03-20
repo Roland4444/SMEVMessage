@@ -6,7 +6,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class FileInBinary implements BinaryMessage {
+public abstract class FileInBinary implements BinaryMessage {
+    public abstract void printSelf();
     public String filename;
     public byte[] fileContent;
     public static void suspendToDisk(FileInBinary pb) throws IOException {
