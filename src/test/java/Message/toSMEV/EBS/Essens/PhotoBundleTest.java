@@ -14,7 +14,10 @@ class PhotoBundleTest {
 
     @Test
     void suspendToDisk() throws IOException, InterruptedException {
-        PhotoBundle pb = (PhotoBundle) BinaryMessage.restored(Files.readAllBytes(new File("photoblob.bin").toPath()));
+        PhotoBundle pb = new PhotoBundle();
+        pb.filename = "fxx.jpg";
+        pb.fileContent = BinaryMessage.readBytes("res/fxx.jpg");
+        BinaryMessage.write(BinaryMessage.savedToBLOB(pb), "photoblob.bin");
         assertNotEquals(null, pb);
         FileInBinary.clean(pb);
         FileInBinary.suspendToDisk(pb);

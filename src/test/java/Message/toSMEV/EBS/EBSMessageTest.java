@@ -18,6 +18,10 @@ class EBSMessageTest {
     SoundBundle sb = new SoundBundle();
     String filename = "EBSMessageFUll.bin";
 
+    public EBSMessageTest() throws IOException {
+        BinaryMessage.write(BinaryMessage.savedToBLOB(new EBSMessage(oi, sb, pb)), filename);
+    }
+
     @Test
     public void testrestore(){
         oi.Mnemonic="TESIA";
