@@ -2,13 +2,14 @@ package Message.toSMEV.EBS.Essens;
 
 import Message.abstractions.BinaryMessage;
 import Message.abstractions.FileInBinary;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 class PhotoBundleTest {
 
