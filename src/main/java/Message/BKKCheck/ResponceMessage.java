@@ -5,7 +5,7 @@ import Message.abstractions.BinaryMessage;
 import java.io.*;
 
 public class ResponceMessage implements BinaryMessage {
-    public ResponceMessage(int checkResult, int lastErrorInSession, int ResultLoadingSoSymbols, String ID){
+    public ResponceMessage(int checkResult, String ID){
         this.checkResult=checkResult;
         this.ID=ID;
     }
