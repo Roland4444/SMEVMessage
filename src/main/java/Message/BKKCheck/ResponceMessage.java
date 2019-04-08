@@ -14,6 +14,14 @@ public class ResponceMessage implements BinaryMessage {
         this.ID=ID;
     }
 
+    public static void printIt(ResponceMessage input){
+        System.out.println("Result code ="+input.checkResult);
+        System.out.println("Bad value ="+input.problemValue);
+        System.out.println("Problem param  ="+input.ProblemName);
+
+
+    }
+
 
 
 
